@@ -1,0 +1,112 @@
+/* Basic reset for margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    background-color: #343a40;
+    color: white;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Navigation bar styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navbar links */
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+/* User greeting */
+nav p {
+    margin: 0;
+    font-size: 16px;
+    color: white;
+}
+
+/* Navbar hover effect */
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Make sure page content doesn't overlap with the navbar */
+main {
+    padding-top: 70px; /* Adjust this based on the navbar's height */
+}
+
+/* Flash messages container */
+.flash-messages {
+    position: fixed;
+    top: 70px; /* Adjust based on navbar height */
+    right: 20px;
+    z-index: 1000;
+    max-width: 300px;
+}
+
+/* General flash message styling */
+.flash-message {
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    opacity: 0.95;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Success flash message (green) */
+.flash-message.success {
+    background-color: #5cb85c;
+    color: white;
+}
+
+/* Error flash message (red) */
+.flash-message.error {
+    background-color: #d9534f;
+    color: white;
+}
+
+/* Info flash message (blue) */
+.flash-message.info {
+    background-color: #5bc0de;
+    color: white;
+}
+
+/* Warning flash message (yellow) */
+.flash-message.warning {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+/* Hover effect */
+.flash-message:hover {
+    opacity: 1;
+}
+
+/* Flash message transition on hover */
+.flash-message:hover {
+    opacity: 1;
+}

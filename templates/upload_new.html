@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Upload New Image{% endblock %}
+
+{% block content %}
+    <h2>Upload a new image for comparison</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="cycle_number">Cycle Number:</label>
+        <input type="text" id="cycle_number" name="cycle_number" required>
+    
+        <label for="new_image">Upload New Image:</label>
+        <input type="file" id="new_image" name="new_image" required>
+    
+        <input type="hidden" id="batch_number" name="batch_number" value="{{ batch_number }}">
+        <input type="hidden" id="powder_type" name="powder_type" value="{{ powder_type }}">
+    
+        <button type="submit">Upload and Compare</button>
+    </form>
+    
+{% endblock %}

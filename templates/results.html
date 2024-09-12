@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('upload_new') }}">Upload New Image</a>
+            {% if session.get('user_id') %}
+                <a href="{{ url_for('logout') }}">Logout ({{ session.get('username') }})</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('register') }}">Register</a>
+            {% endif %}
+        </nav>
+    </header>
+    <main>
+        <h1>Comparison Results</h1>
+        <h2>Initial Image</h2>
+        <img src="{{ url_for('static', filename='uploads/' ~ initial_image.image_path) }}" alt="Initial Image">
+        <p>Batch Number: {{ initial_image.batch_number }}</p>
+        <p>Powder Type: {{ initial_image.powder_type }}</p>
+
+        <h2>Compared Images</h2>
+        <ul>
+            {% for image in compared_images %}
+                <li>
+                    <h3>Cycle Number: {{ image.cycle_number }}</h3>
+                    <img src="{{ url_for('static', filename='uploads/' ~ image.image_path) }}" alt="Compared Image">
+                    <p>Batch Number: {{ image.batch_number }}</p>
+                    <p>Predicted Value: {{ image.predicted_value }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+    <footer>
+        <p>&copy; 2024 Your Company</p>
+    </footer>
+</body>
+</html>

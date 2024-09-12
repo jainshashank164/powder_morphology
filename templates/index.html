@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}Upload Initial Image{% endblock %}
+
+{% block content %}
+    <h2>Upload your initial image</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <label for="batch_number">Batch Number:</label>
+        <input type="text" id="batch_number" name="batch_number" required>
+    
+        <label for="powder_type">Powder Type:</label>
+        <input type="text" id="powder_type" name="powder_type" required>
+    
+        <label for="initial_image">Upload Initial Image:</label>
+        <input type="file" id="initial_image" name="initial_image" required>
+    
+        <button type="submit">Upload Initial Image</button>
+    </form>
+    
+{% endblock %}
