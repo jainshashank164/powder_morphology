@@ -4,6 +4,9 @@ FROM python:3.10
 # Set the working directory in the container
 WORKDIR /app
 
+# Upgrade pip
+RUN pip install --upgrade pip
+
 # Copy the requirements.txt file into the container at /app
 COPY requirements.txt .
 
